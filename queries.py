@@ -57,6 +57,32 @@ QUERIES = {
     FROM Sales;
     """,
 
+    "Number of Cars Sold": """
+    SELECT
+        COUNT(*) AS TotalCarsSold
+    FROM Cars
+    WHERE Status = 'Sold';
+    """,
+
+    "Number of Cars by Fuel Type": """
+    SELECT
+        FuelType,
+        COUNT(*) AS NumberOfCars
+    FROM Cars
+    GROUP BY FuelType
+    ORDER BY NumberOfCars DESC;
+    """,
+
+    "Number of Sales by Payment Method": """
+    SELECT
+        PaymentMethod,
+        COUNT(*) AS NumberOfSales,
+        ROUND(SUM(SalePrice), 2) AS TotalRevenue_GBP
+    FROM Sales
+    GROUP BY PaymentMethod
+    ORDER BY NumberOfSales DESC;
+    """,
+
     "Cars with Upcoming Services": """
     SELECT
         sv.ServiceID,
