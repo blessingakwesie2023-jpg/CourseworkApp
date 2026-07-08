@@ -3,7 +3,7 @@ import pandas as pd
 import io
 from database import fetch, execute
 
-st.title("Car Dealership Database Management System")
+st.title("DriveSmart Motors Ltd")
 
 menu = st.sidebar.selectbox(
     "Menu",
